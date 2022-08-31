@@ -55,3 +55,16 @@ app.get('/quotes', (req, res) => {
     }
     res.send(quotesDoSend)
 })
+
+app.get('/quotes/:id', (req, res) => {
+    const id = Number(req.params.id)
+    const quote = quotes.find(q => q.id === id)
+    if (!quote) {
+        res.status(404).send('Quote not found. Try a different id')
+    }
+    res.send(quote)
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
