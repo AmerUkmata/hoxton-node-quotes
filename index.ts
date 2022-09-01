@@ -65,18 +65,18 @@ app.get('/quotes/:id', (req, res) => {
     res.send(quote)
 })
 
-app.post('/quotes', (req,res)=> {
-    const newQuote: Quote = {
-        id: quotes[quotes.length - 1].id + 1,
-        user: {
-            username: req.body.username,
-            gamertag: req.body.gamertag,
-            age: req.body.Number
-        }
-    }
-    quotes.push(newQuote)
-    res.send(newQuote)
-})
+// app.post('/quotes', (req,res)=> {
+//     const newQuote: Quote = {
+//         id: quotes[quotes.length - 1].id + 1,
+//         user: {
+//             username: req.body.username,
+//             gamertag: req.body.gamertag,
+//             age: req.body.Number
+//         }
+//     }
+//     quotes.push(newQuote)
+//     res.send(newQuote)
+// })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
